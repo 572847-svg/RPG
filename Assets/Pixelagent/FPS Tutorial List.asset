@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbe1dcae6f5a4907961d65ede18f26c, type: 3}
+  m_Name: FPS Tutorial List
+  m_EditorClassIdentifier: 
+  headerImage: {fileID: 2800000, guid: 402baab975285254ba6193cc664a19a6, type: 3}
+  headerName: FPS Tutorials
+  tutorials:
+  - name: 'FPS Mod: A splash of color'
+    url: https://docs.google.com/document/d/1p2DqD_8f9qg-a1peHoJKQrEmMkJdKDaXS0LdyMmb9oU/edit?usp=sharing
+  - name: 'FPS Mod: Add a new Enemy Robot with a hat'
+    url: https://docs.google.com/document/d/12CwxqgMab1GCrXQscTyHfvuOAxRBpZkIuI9oWCK6zHE/edit?tab=t.0
+  - name: 'FPS Mod: Add a new level to your game flow '
+    url: https://docs.google.com/document/d/16lRUNMGubfp8f5FrWk0R0P9XzmnI2iff6OCiCuc9pcM/edit?usp=sharing
+  - name: 'FPS Mod: Add a personalised animated face to your Customizable Boss '
+    url: https://docs.google.com/document/d/1lYKkVbF48kz7ASBarF4Upnk225O4KDjnTRWaeSu0PFU/edit?usp=sharing
+  - name: 'FPS Mod: Adding post-process effects'
+    url: https://docs.google.com/document/d/1Uo0yJteazxTjipuOozHU_f9GplzoFJRrEKdu2Cug3lw/edit?usp=sharing
+  - name: 'FPS Mod: Build a Level with the Grid'
+    url: https://docs.google.com/document/d/1_8CoSZzx86pfrRUWMrkgN_SlF2t7juI-tke501UYSRQ/edit?usp=sharing
+  - name: 'FPS Mod: Build your Customizable Boss'
+    url: https://docs.google.com/document/d/1V2EGOc3j2HXI7s3ewOlS6KZJrcIXi48rkbQcYXZU260/edit?usp=sharing
+  - name: 'FPS Mod: CCTV live in-game camera feed'
+    url: https://docs.google.com/document/d/1M84V2mnYte2jGPXnbWu4Lmr89NfdZUGvRTMQGsdcl_Y/edit?usp=sharing
+  - name: 'FPS Mod: Creating the Navigation Mesh'
+    url: https://docs.google.com/document/d/13fV1XTXDhF3K3FvuyATzFMHB7AEXmvwOMpWXTOEvpTs/edit?usp=sharing
+  - name: 'FPS Mod: Customize the sky'
+    url: https://docs.google.com/document/d/1Rhc9JAFMfpCX52mrpiJ03eR5ihuHm0XoLIYnHPR2eNk/edit?usp=sharing
+  - name: 'FPS Mod: Dual-weapon wielding'
+    url: https://docs.google.com/document/d/1mvohniuS0jH5QyFcwShX0T0bCLvD1y8CPnv3rrpOZYQ/edit?usp=sharing
+  - name: 'FPS Mod: Expand a level'
+    url: https://docs.google.com/document/d/1C7UAUazRLbX_EQ501uk6W3gXf4dJ0ws2PpqAI4G9GEY/edit?usp=sharing
+  - name: 'FPS Mod: Healing ally robots'
+    url: https://docs.google.com/document/d/1GDLHRvAbaFzpc8aOV8NM6-uyYteEQGWPSRn9W1u2Dco/edit?usp=sharing
+  - name: 'FPS Mod: Hit points'
+    url: https://docs.google.com/document/d/10VvltBP7-ytFdWTXlQV203jDEI9ExDAupx9UYSr_T3o/edit?usp=sharing
+  - name: 'FPS Mod: Level Art (add props)'
+    url: https://docs.google.com/document/d/1s3GWgJVT6J1OWIfytIkbMAt13c4ZxMP58ybBeafMCbc/edit?usp=sharing
+  - name: 'FPS Mod: Mix your own Sci Fi Soundtrack'
+    url: https://docs.google.com/document/d/1Bh-OH9ulOZCIQrL3RNLtZPBu7wcNFpa-OpUTBR_cS8U/edit?usp=sharing
+  - name: 'FPS Mod: Name your game'
+    url: https://docs.google.com/document/d/1wQS7ZFf_g2ZE_zOxOJ-NyLN8WApuzdWHkze2aaYiGLk/edit?usp=sharing
+  - name: 'FPS Mod: New Loot Item from Destroying Enemies'
+    url: https://docs.google.com/document/d/1o-_d-NrBmfsKP_o8ytygugW01fEpjTxOeYM7S9Kpbsc/edit?usp=sharing
+  - name: 'FPS Mod: Player Properties'
+    url: https://docs.google.com/document/d/1j67P2GMySambIuQk8YlISMZWncMzvLZPl3tZ3u3QxCw/edit?usp=sharing
+  - name: 'FPS Mod: Power Up Health Pack'
+    url: https://docs.google.com/document/d/1LrLSpO9WOIzEPS9V7AZAExiTEewkPgpMi9rkaJHLQQY/edit?usp=sharing
+  - name: 'FPS Mod: Set up a new burst rifle weapon'
+    url: https://docs.google.com/document/d/1Xgrz9J8rOuGhOxdIFVzvzKdOvRJqDh8YpeHDlradhe4/edit?usp=sharing
+  - name: "FPS Mod: Set up your Customizable Boss\u2019 weapons"
+    url: https://docs.google.com/document/d/1N8BCnUeQI6dUEqVo5-HemzU6pqIkuZ3jSF2ZnqCY-XA/edit?usp=sharing
+  - name: 'FPS Mod: Swap your sounds'
+    url: https://docs.google.com/document/d/1_OM3Q4qUCja_0WV1s5bipNFWxKXApBk_VXz3lgpNcls/edit?usp=sharing
+  - name: 'FPS Mod: Tune up your game''s performance'
+    url: https://docs.google.com/document/d/1qzZaVUxBQJrwP9Z92nCdhtnDtzYwUbqTDNGjLK_SlgQ/edit?usp=sharing
+  - name: 'FPS Mod: Tweak damage dealt by enemies and attack range'
+    url: https://docs.google.com/document/d/1Sul4lvoeaI5aA27rTixcr80bzkOmF61gug-rdcJHJ3c/edit?usp=sharing
+  - name: 'FPS Mod: Unlock a new Sniper Rifle weapon'
+    url: https://docs.google.com/document/d/1nczGdTZ9t3NFLsNPK8dCjbxRc6Vl6pd0V7qLoOHXkJ4/edit?usp=sharing
+  - name: 'FPS Mod: Weapon Parameters'
+    url: https://docs.google.com/document/d/1ZPHkdLZhPdaXbPgZYUQx54P7gprSCmf67BRlMeq5o2c/edit?usp=sharing
+  - name: Add the Fireballer Pickup (Asset Purchase Required)
+    url: https://docs.google.com/document/d/1TAizVW8LTs52WZacr4NROF9n8fColk_yI9KCaR4GN1o/edit?usp=sharing

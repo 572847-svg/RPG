@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbe1dcae6f5a4907961d65ede18f26c, type: 3}
+  m_Name: Karting Tutorial List
+  m_EditorClassIdentifier: 
+  headerImage: {fileID: 2800000, guid: 32ad5c0bc0b36ba4896654a29c4547b2, type: 3}
+  headerName: Karting Tutorials
+  tutorials:
+  - name: 'Karting Mod: Add a Ghost Driver'
+    url: https://docs.google.com/document/d/1TOdybnZemxaj1G0unU1loW7VRjetj3ldGoxl4urwDaU/edit?tab=t.0
+  - name: 'Karting Mod: Sweet ride! Unlock upgraded smart karts '
+    url: https://docs.google.com/document/d/1SepWNZSNLcRuxypMBuUl8ppNKFpFs5LdJkB7fi9TqKw/edit?tab=t.0
+  - name: 'Karting Mod: Sepia Back in Time '
+    url: https://docs.google.com/document/d/1Qd1ikM125OfTxsVdMB96UUfSES0YHE5u3YklYc-iRd4/edit?tab=t.0
+  - name: 'Karting Mod: Name your game '
+    url: https://docs.google.com/document/d/17F9sAk11OnrpASN_Bv6VonCdmrDKb-bQ4ICzZ07EHt8/edit?tab=t.0
+  - name: 'Karting Mod: Light Trail Racer '
+    url: https://docs.google.com/document/d/1gt8LjDteETgaIbqP-bDzr3e4JJWYDOaOKeN0AoY8ktc/edit?tab=t.0
+  - name: 'Karting Mod: Lap Course Game Mode'
+    url: https://docs.google.com/document/d/1qppeeXpQvJUdXDbioTsao8i9I1RDbd-OTG9rCHNALbI/edit?tab=t.0
+  - name: 'Karting Mod: Decorate Your World'
+    url: https://docs.google.com/document/d/1hACqrv5UeJ6GDG6fUgAT8vqVbgHd8p-2NGy-WYwkpgY/edit?tab=t.0
+  - name: 'Karting Mod: Custom Triggers'
+    url: https://docs.google.com/document/d/1GjEZnmgXqnNEwz3N3JkVN_x_v8e0fQOqatFO9x0kXcQ/edit?tab=t.0
+  - name: 'Karting Mod: Bumpy Road'
+    url: https://docs.google.com/document/d/1hoiBPj_IIsOpE8j8ZEeXAhA4_kRpNuNQNH1ICQKYNl8/edit?tab=t.0
+  - name: 'Karting Mod: Crash Course Game Mode'
+    url: https://docs.google.com/document/d/10L2yI41Oln1UYANQWWKc5k1N6x2FD1BcrCF2AZn4dvc/edit?tab=t.0
+  - name: 'Karting Mod: Build Your Own Track'
+    url: https://docs.google.com/document/d/1D5jZC4vtZDJXvFVnjneUh70r9X08-xv3PYIvoQVnAN4/edit?tab=t.0#heading=h.5x74mypsntsw
+  - name: 'Karting Mod: Add Speed Pads '
+    url: https://docs.google.com/document/d/1oMs3dBdKoQ2Q-0hR5bq21LuE0tK_HOvbzLdFfW1GPLU/edit?tab=t.0#heading=h.894fqk85eiap
+  - name: 'Karting Mod: Billboard Face '
+    url: https://docs.google.com/document/d/1Hz-FCAdawGDSOfIZWl9A0mZ7plIuUF_Ui3tsTpu8UJc/edit?tab=t.0
+  - name: 'Karting Mod: Beat the clock Game Mode '
+    url: https://docs.google.com/document/d/1xl6Tv3LLZsKbTTQjLCjdvXw2p-dTI3_0HCxlla3_gjE/edit?tab=t.0#heading=h.xzu1ikdj30s3
+  - name: 'Karting Mod: Bouncy Sparkly! '
+    url: https://docs.google.com/document/d/1Poa6oKi7HDmxk0bRM1VmIxbspDymE0XQSDqHYM4p_Og/edit?tab=t.0
+  - name: 'Karting Mod: A Splash of Color'
+    url: https://docs.google.com/document/d/160cV8ftZu0vHIlkbXngZpDjZkrN2vHAGHdt81rSx8Hc/edit?tab=t.0#heading=h.p86qzfnp4d6o
+  - name: 'Karting Mod: Add a Hat'
+    url: https://docs.google.com/document/d/1Ls4yrMykdybDCkDaZEJbSFo9ZE4NhhlHPzWC7XuKkiA/edit?tab=t.0
+  - name: 'Karting Mod: Add Sparkling Particle Effects '
+    url: https://docs.google.com/document/d/1rDfyXEQmEolNn5t-NN-eH6sh0dOLFH77aAW8ed6oOtc/edit?tab=t.0
+  - name: 'Karting Mod: Customize your Karting character'
+    url: https://docs.google.com/document/d/1J__Z4_-ubx9oxTcoynoBNKTK4DB-dCZFRdxBuOASm64/edit?tab=t.0#heading=h.17murm2a38t8
+  - name: Welcome to FMOD for Unity
+    url: https://docs.google.com/document/d/1k_FqLRA4b-C2XVVkCSGI6pgxVKGBICHbz4hY7Ekf2BQ/edit?tab=t.0#heading=h.ducik2rmccgw

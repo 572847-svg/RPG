@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TutorialRequirement
   - Damage
+  - coinText
   layers:
   - Default
   - TransparentFX

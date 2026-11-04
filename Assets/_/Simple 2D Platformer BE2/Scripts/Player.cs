@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,9 +29,14 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         extraJumps = extraJumpValue;
+
+        if (Checkpoint.savedPosition != Vector2.zero)
+        {
+            transform.position = Checkpoint.savedPosition;
+        }
     }
 
-    
+
     void Update()
     {
         float moveInput = Input.GetAxis("Horizontal");
@@ -41,7 +47,7 @@ public class Player : MonoBehaviour
             extraJumps = extraJumpValue;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded)
             {
@@ -57,6 +63,11 @@ public class Player : MonoBehaviour
         SetAnimation(moveInput);
 
         healthImage.fillAmount = Health / 100f;
+
+        if (transform.position.y < -29.5)
+        {
+            Die();
+        }
     }
 
     private void FixedUpdate()
@@ -66,9 +77,9 @@ public class Player : MonoBehaviour
 
     private void SetAnimation(float moveInput)
     {
-        if(isGrounded)
+        if (isGrounded)
         {
-            if(moveInput == 0)
+            if (moveInput == 0)
             {
                 animator.Play("Player_Idle");
             }
@@ -79,7 +90,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if(rb.linearVelocityY > 0)
+            if (rb.linearVelocityY > 0)
             {
                 animator.Play("Player_Jump");
             }
@@ -92,13 +103,13 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Damage")
+        if (collision.gameObject.tag == "Damage")
         {
             Health -= 25;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             StartCoroutine(BlinkRed());
 
-            if(Health <= 0)
+            if (Health <= 0)
             {
                 Die();
             }
@@ -117,4 +128,7 @@ public class Player : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
+
+    
+       
 }

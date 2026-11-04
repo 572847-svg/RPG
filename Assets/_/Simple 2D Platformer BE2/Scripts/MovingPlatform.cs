@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 4f;
     public Transform[] points;
 
     private int i;

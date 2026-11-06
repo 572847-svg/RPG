@@ -14,6 +14,10 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public Image healthImage;
 
+    [Header("Invincibility")]
+    public float IFrameDuration = 1f;
+    public bool isInvincible;
+
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -105,9 +109,13 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Damage")
         {
+            if (isInvincible) return;
+
             Health -= 25;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             StartCoroutine(BlinkRed());
+
+            StartCoroutine(InvincibilityFrames());
 
             if (Health <= 0)
             {
@@ -118,9 +126,9 @@ public class Player : MonoBehaviour
 
     private IEnumerator BlinkRed()
     {
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = new Color(Color.red.r, Color.red.g, Color.red.g, spriteRenderer.color.a);
         yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = new Color(Color.white.r, Color.white.g, Color.white.g, spriteRenderer.color.a);
 
     }
 
@@ -129,6 +137,24 @@ public class Player : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
-    
+    private IEnumerator InvincibilityFrames()
+    {
+        isInvincible = true;
+
+        float elapsed = 0f;
+
+        while(elapsed < IFrameDuration)
+        {
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.3f);
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
+            yield return new WaitForSeconds(0.1f);
+
+            elapsed += 0.2f;
+        }
+
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
+        isInvincible = false;
+    }
        
 }

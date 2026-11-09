@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public Image healthImage;
 
+    [Header("Shooting")]
+    public GameObject bulletPrefab;
+    public float fireRate;
+
+    private float fireTimer;
+
     [Header("Invincibility")]
     public float IFrameDuration = 1f;
     public bool isInvincible;
@@ -46,6 +52,18 @@ public class Player : MonoBehaviour
         float moveInput = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
+        if(rb.linearVelocityX != 0)
+        {
+            if (rb.linearVelocityX > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+
         if (isGrounded)
         {
             extraJumps = extraJumpValue;
@@ -72,6 +90,8 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+
+        HandleShooting();
     }
 
     private void FixedUpdate()
@@ -124,6 +144,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    
+
     private IEnumerator BlinkRed()
     {
         spriteRenderer.color = new Color(Color.red.r, Color.red.g, Color.red.g, spriteRenderer.color.a);
@@ -156,5 +178,39 @@ public class Player : MonoBehaviour
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
         isInvincible = false;
     }
-       
+     
+    private void HandleShooting()
+    {
+        fireTimer -= Time.deltaTime;
+
+        if(Input.GetMouseButton(0) && fireTimer <= 0f)
+        {
+            Shoot();
+            fireTimer = fireRate;
+        }
+    }
+
+    private void Shoot()
+    {
+        GameObject Bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        Bullet bulletScript = Bullet.GetComponent<Bullet>();
+        
+        if (spriteRenderer.flipX)
+        {
+            bulletScript.SetDirection(Vector2.left);
+        }
+        else
+        {
+            bulletScript.SetDirection(Vector2.right);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(transform.parent.gameObject);
+        }
+    }
 }

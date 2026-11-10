@@ -400,6 +400,13 @@ MonoBehaviour:
   points:
   - {fileID: 853097684}
   - {fileID: 309795532}
+  canCharge: 0
+  ChargeSpeed: 5
+  sightDistance: 3
+  LoseDistance: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &83274155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1652,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 697837607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &337660585
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 485475029605253054, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_Name
+      value: ChargingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030428054564688973, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672632562284133477, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054677152175005778, guid: 3e816618fafbde94495d3a0a05b23d05,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e816618fafbde94495d3a0a05b23d05, type: 3}
 --- !u!1001 &342660104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114080,6 +114165,13 @@ MonoBehaviour:
   points:
   - {fileID: 2062784721}
   - {fileID: 103914550}
+  canCharge: 0
+  ChargeSpeed: 5
+  sightDistance: 3
+  LoseDistance: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &1056156967
 Animator:
   serializedVersion: 7
@@ -115092,7 +115184,7 @@ Transform:
   m_GameObject: {fileID: 1447468295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.57194, y: 23.913233, z: -3}
+  m_LocalPosition: {x: 49.427273, y: 23.913233, z: -3}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -115866,6 +115958,13 @@ MonoBehaviour:
   points:
   - {fileID: 199497086}
   - {fileID: 1134808149}
+  canCharge: 0
+  ChargeSpeed: 5
+  sightDistance: 3
+  LoseDistance: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &1693674851
 Animator:
   serializedVersion: 7
@@ -116979,7 +117078,7 @@ GameObject:
   - component: {fileID: 1974498247}
   - component: {fileID: 1974498248}
   - component: {fileID: 1974498249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -117163,6 +117262,9 @@ MonoBehaviour:
   IFrameDuration: 1.5
   isInvincible: 0
   extraJumpValue: 1
+  coyoteTime: 0.2
+  JumpBufferTime: 0.15
+  JumpBufferCounter: 0
 --- !u!95 &1974498249
 Animator:
   serializedVersion: 7
@@ -117387,7 +117489,7 @@ Transform:
   m_GameObject: {fileID: 1985038271}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.57194, y: 23.913233, z: -3}
+  m_LocalPosition: {x: 49.427273, y: 23.913233, z: -3}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -117544,6 +117646,13 @@ MonoBehaviour:
   points:
   - {fileID: 1387454165}
   - {fileID: 254697994}
+  canCharge: 0
+  ChargeSpeed: 5
+  sightDistance: 3
+  LoseDistance: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &2044098053
 Animator:
   serializedVersion: 7
@@ -117863,3 +117972,4 @@ SceneRoots:
   - {fileID: 83274156}
   - {fileID: 1513847069}
   - {fileID: 1589862543}
+  - {fileID: 337660585}

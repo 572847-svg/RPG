@@ -24,6 +24,22 @@ public class Player : MonoBehaviour
     public float IFrameDuration = 1f;
     public bool isInvincible;
 
+    [Header("wall sliding")]
+    public float wallCheckDistance = -22f;
+    public float WallSlideSpeed = 2f;
+
+    private bool isTouchingWall;
+    private bool isWallSliding;
+
+    [Header("Crouch")]
+    public float crouchSpeed = 2f;
+    public KeyCode crouchKey = KeyCode.S;
+
+    private bool isCrouching;
+    private CapsuleCollider2D capsuleCollider;
+    private Vector2 originalColliderSize;
+    private Vector2 originalcollideroffset;
+
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -32,11 +48,20 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public int extraJumpValue = 1;
     private int extraJumps;
+
+    public float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+    public float JumpBufferTime = 0.15f;
+    public float JumpBufferCounter;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+
 
         extraJumps = extraJumpValue;
 
@@ -66,19 +91,45 @@ public class Player : MonoBehaviour
 
         if (isGrounded)
         {
+            coyoteTimeCounter = coyoteTime;
             extraJumps = extraJumpValue;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            if (isGrounded)
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            JumpBufferCounter = JumpBufferTime;
+        }
+        else
+        {
+            JumpBufferCounter = Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)/*JumpBufferCounter > 0f*/)
+        {
+            if (isWallSliding)
+            {
+                float direction = spriteRenderer.flipX ? 1 : -1;
+
+                rb.linearVelocity = new Vector2(direction * 8f, jumpForce);
+
+                spriteRenderer.flipX = !spriteRenderer.flipX;
+                JumpBufferCounter = 0f;
+            }
+            else if (coyoteTimeCounter > 0f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                coyoteTimeCounter = 0f;
+                JumpBufferCounter = 0f;
             }
             else if (extraJumps > 0)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 extraJumps--;
+                JumpBufferCounter = 0f;
             }
         }
 
@@ -86,17 +137,29 @@ public class Player : MonoBehaviour
 
         healthImage.fillAmount = Health / 100f;
 
+        if(rb.linearVelocityY < 0)
+        {
+            rb.gravityScale = 2.5f;
+        }
+        else
+        {
+            rb.gravityScale = 1.2f;
+        }
+
         if (transform.position.y < -29.5)
         {
             Die();
         }
 
         HandleShooting();
+        HandlewallSlide(moveInput);
     }
 
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        isTouchingWall = Physics2D.Raycast(transform.position, spriteRenderer.flipX ? Vector2.left : Vector2.right);
     }
 
     private void SetAnimation(float moveInput)
@@ -178,6 +241,19 @@ public class Player : MonoBehaviour
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
         isInvincible = false;
     }
+
+    private void HandlewallSlide(float moveinput)
+    {
+        if(isTouchingWall && isGrounded && moveinput != 0 && rb.linearVelocityY < 0)
+        {
+            isWallSliding = true;
+            rb.linearVelocityY = -WallSlideSpeed;
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
      
     private void HandleShooting()
     {
@@ -210,7 +286,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(transform.parent.gameObject);
+            Destroy(transform./*parent.*/gameObject);
         }
     }
 }

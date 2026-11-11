@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -31,14 +32,13 @@ public class Player : MonoBehaviour
     private bool isTouchingWall;
     private bool isWallSliding;
 
-    [Header("Crouch")]
+    /*[Header("Crouch")]
     public float crouchSpeed = 2f;
     public KeyCode crouchKey = KeyCode.S;
 
     private bool isCrouching;
     private CapsuleCollider2D capsuleCollider;
-    private Vector2 originalColliderSize;
-    private Vector2 originalcollideroffset;
+    private Vector2 originalColliderSize;*/
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        originalColliderSize = capsuleCollider.size;
 
         extraJumps = extraJumpValue;
 
@@ -151,7 +152,18 @@ public class Player : MonoBehaviour
             Die();
         }
 
-        HandleShooting();
+        /*bool crouchinput = Input.GetKey(crouchKey);
+
+        if(crouchinput)
+        {
+            startCrouch();
+        }
+        else
+        {
+            stopCrouch();
+        }*/
+
+            HandleShooting();
         HandlewallSlide(moveInput);
     }
 
@@ -160,6 +172,8 @@ public class Player : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         isTouchingWall = Physics2D.Raycast(transform.position, spriteRenderer.flipX ? Vector2.left : Vector2.right);
+
+       // float currentspeed = isCrouching ? crouchSpeed : moveSpeed;
     }
 
     private void SetAnimation(float moveInput)
@@ -268,9 +282,9 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject Bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
-        Bullet bulletScript = Bullet.GetComponent<Bullet>();
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
         
         if (spriteRenderer.flipX)
         {
@@ -286,7 +300,25 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(transform./*parent.*/gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
+
+   /* void startCrouch()
+    {
+        if (isCrouching) return;
+
+        isCrouching = true;
+
+        capsuleCollider.size = new Vector2(originalColliderSize.x, originalColliderSize.y = 0.5f);
+    }
+
+    void stopCrouch()
+    {
+        if (!isCrouching) return;
+
+        isCrouching = false;
+
+        capsuleCollider.size = originalColliderSize;
+    }*/
 }
